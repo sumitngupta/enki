@@ -7,21 +7,38 @@ gem 'rails', '3.2.8'
 
 # Gems used only for assets and not required
 # in production environments by default.
+#group :assets do
+#  gem 'sass-rails',   '~> 3.2.3'
+#end
+#
+#platforms :ruby do
+#  gem 'pg'
+#end
+#
+#platforms :jruby do
+#  gem 'activerecord-jdbcsqlite3-adapter'
+#  gem 'trinidad'
+#  gem 'jruby-openssl'
+#end
+#
+#gem 'jquery-rails'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
+  gem 'uglifier'
+  gem 'compass-rails'
 end
 
 platforms :ruby do
-  gem 'sqlite3'
+  gem 'pg'
 end
 
 platforms :jruby do
-  gem 'activerecord-jdbcsqlite3-adapter'
   gem 'trinidad'
   gem 'jruby-openssl'
 end
 
 gem 'jquery-rails'
+gem 'thin'
 
 # Use unicorn as the web server
 # gem 'unicorn'
