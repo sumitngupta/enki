@@ -1,5 +1,5 @@
 Enki::Application.routes.draw do
-  mount Nkss::Engine => '/styleguides' if Rails.env.development?
+  mount Nkss::Engine => '/styleguides'
 
   namespace :admin do
     resource :session
