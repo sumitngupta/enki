@@ -100,7 +100,7 @@ function destroyAndUndoBehaviour(type) {
           $('form.delete-item').submit(onDeleteFormClick);
           restripe();
         });
-      },
+      }
     });
 
     $('form.delete-item').submit(onDeleteFormClick);
@@ -111,6 +111,12 @@ $(document).ready(function() {
   $(['posts', 'comments', 'pages']).each(function() {
     if ($('#' + this).length > 0) {
       destroyAndUndoBehaviour(this)();
+
+      $('.icon-trash').click(function () {
+        var $this = $(this);
+
+        $this.closest('form').submit();
+      })
     }
   });
 });
