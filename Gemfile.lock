@@ -95,6 +95,9 @@ GEM
     ffi (1.0.11-java)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    formtastic-bootstrap (2.0.0)
+      formtastic (~> 2.2)
+      formtastic-bootstrap
     fssm (0.2.9)
     gherkin (2.7.3)
       json (>= 1.4.6)
@@ -231,6 +234,7 @@ DEPENDENCIES
   exception_notification (~> 2.5.2)
   factory_girl
   formtastic
+  formtastic-bootstrap
   haml
   jquery-rails
   jruby-openssl
