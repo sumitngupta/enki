@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/kristianmandrup/skeleton-rails.git
+  revision: 2fea02db0c7562dabb911240b40b8f1811cd08e3
+  specs:
+    skeleton-rails (0.1.0)
+
+GIT
   remote: git://github.com/nadarei/nkss-rails.git
   revision: aa1b86283f5ed2bffa7b6ef85513fe1fb45ebe48
   specs:
@@ -105,6 +111,11 @@ GEM
       json (>= 1.4.6)
     google-analytics-rails (0.0.3)
     haml (3.1.7)
+    haml-rails (0.3.5)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (~> 3.1)
+      railties (>= 3.1, < 4.1)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.4)
@@ -237,7 +248,8 @@ DEPENDENCIES
   formtastic
   formtastic-bootstrap
   google-analytics-rails
-  haml
+  haml (~> 3.1.7)
+  haml-rails (~> 0.3.5)
   jquery-rails
   jruby-openssl
   lesstile
@@ -251,6 +263,7 @@ DEPENDENCIES
   rspec-rails
   ruby-openid
   sass-rails (~> 3.2.3)
+  skeleton-rails!
   thin
   trinidad
   uglifier
