@@ -1,6 +1,6 @@
 $(function() { // onload
   var comment_form = $('#new_comment')
-  var input_elements = comment_form.find(':text, textarea')
+  var input_elements = comment_form.find(':text, textarea');
   var fetch_comment_preview = function() {
     var dest = window.location.href;
     dest = dest.split('#')[0];

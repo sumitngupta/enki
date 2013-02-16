@@ -49,5 +49,6 @@ protected
   def allow_login_bypass?
     %w(development test).include?(Rails.env)
   end
+
   helper_method :allow_login_bypass?
 end
