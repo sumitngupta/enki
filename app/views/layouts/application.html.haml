@@ -8,11 +8,14 @@
       = javascript_include_tag 'application'
       = open_id_delegation_link_tags(enki_config[:open_id_delegation, :server], enki_config[:open_id_delegation, :delegate]) if enki_config[:open_id_delegation]
       = analytics_init if Rails.env.production?
+      -#%link{:href => "http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700", :rel => "stylesheet", :type => "text/css"}
       = yield(:head)
   %body
     .header
-      %h1#logo
-        %a{:href => root_url}= enki_config[:title]
+      .container
+        .sixteen.columns
+          %h1#logo
+            = link_to "sumit", root_path
 
     .container
       .sixteen.columns

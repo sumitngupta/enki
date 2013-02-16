@@ -13,8 +13,17 @@
 //= require skeleton/skeleton
 //= require_self
 
+@import 'compass/css3'
+
+$header_font: 'Libre Baskerville', serif
+
+a
+  text-decoration: none
+
 body
   background-color: #e3e3e1
+  background-image: image-url('backgrounds/satinweave.png')
+  background-repeat: repeat
 
 .header
   width: 100%
@@ -24,4 +33,16 @@ body
   background-repeat: no-repeat
   background-size: cover
   margin-bottom: 30px
+  @include box-shadow(#333, 1px, 1px, 1px)
+  border-bottom: 1px solid #666
 
+#logo
+  position: relative
+
+  a
+    font-family: $header_font
+    color: #efefef
+    background: #333
+    @include border-radius(3px)
+    position: absolute
+    top: 20px
