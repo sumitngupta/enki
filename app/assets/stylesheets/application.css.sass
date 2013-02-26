@@ -25,22 +25,29 @@ body
   background-image: image-url('backgrounds/satinweave.png')
   background-repeat: repeat
 
-#header
+#header-container
+  position: relative
   width: 100%
   height: 300px
   //background-image: image-url('covers/2.jpg')
   background-color: #333
-  background-position: center
-  background-repeat: no-repeat
-  background-size: cover
   margin-bottom: 30px
   @include box-shadow(#333, 1px, 1px, 1px)
   border-bottom: 1px solid #666
 
+  #header
+    width: 100%
+    height: 100%
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    opacity: 0
+    @include transition(opacity 1.5s ease-in)
+
   .container
     height: 100%
 
-  .spinner
+  .spinner-container
     position: absolute
     top: 50%
     left: 50%

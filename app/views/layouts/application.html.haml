@@ -11,13 +11,16 @@
       = analytics_init if Rails.env.production?
       -#%link{:href => "http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700", :rel => "stylesheet", :type => "text/css"}
       = yield(:head)
+
   %body
-    #header
-      .container
-        .sixteen.columns
-          .spinner
-          %h1#logo
-            = link_to "sumit", root_path
+    #header-container
+      .spinner-container
+
+      #header
+        .container
+          .sixteen.columns
+            %h1#logo
+              = link_to "sumit", root_path
 
     .container
       .sixteen.columns

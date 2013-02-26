@@ -13,13 +13,30 @@
 //= require jquery
 //= require jquery_ujs
 //= require spin
+//= require jquery.imgpreload
 //= require common
 //= require live-comment-preview
 //= require_self
 
-$(function () {
-  console.log('whattup');
-  var spinner = new Spinner({color: '#efefef'}).spin();
 
-  $('#header .spinner').append(spinner.el);
+//http://i.embed.ly/1/image/resize?height=800&width=1100&url=http%3A%2F%2Fblog.sumitngupta.com%2Fassets%2Fcovers%2F2-bca392396952ed0909f5c37d38bfddf5.jpg&key=fb3c4ef788e74e888046dabf72245ec0
+
+$(function () {
+  var spinner,
+    $headerContainer = $('#header-container'),
+    $header = $('#header'),
+    $spinner = $headerContainer.find('.spinner-container'),
+    width = $(window).width(),
+    url = 'http://i.embed.ly/1/image/resize?width=' + width + '&url=http%3A%2F%2Fblog.sumitngupta.com%2Fassets%2Fcovers%2F2-bca392396952ed0909f5c37d38bfddf5.jpg&key=fb3c4ef788e74e888046dabf72245ec0/';
+
+  spinner = new Spinner({color: '#efefef'}).spin();
+  $spinner.append(spinner.el);
+
+  $.imgpreload(url, function () {
+    var imgUrl = 'url("' + this[0].src + '")';
+
+    $header.css('background-image', imgUrl);
+    $header.css('opacity', 1);
+    $spinner.remove();
+  });
 });
