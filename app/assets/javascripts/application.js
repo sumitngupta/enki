@@ -12,6 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require spin
 //= require common
 //= require live-comment-preview
 //= require_self
+
+$(function () {
+  console.log('whattup');
+  var spinner = new Spinner({color: '#efefef'}).spin();
+
+  $('#header .spinner').append(spinner.el);
+});
