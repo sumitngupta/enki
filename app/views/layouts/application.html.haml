@@ -3,6 +3,7 @@
   %head
     %meta{:charset => "utf-8"}
       %title= html_title yield(:page_title)
+      %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
       = csrf_meta_tag
       = stylesheet_link_tag 'application'
       = javascript_include_tag 'application'
