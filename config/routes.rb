@@ -1,6 +1,4 @@
 Enki::Application.routes.draw do
-  mount Nkss::Engine => '/styleguides'
-
   namespace :admin do
     resource :session
 
