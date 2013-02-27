@@ -27,16 +27,34 @@ $(function () {
     $header = $('#header'),
     $spinner = $headerContainer.find('.spinner-container'),
     width = $(window).width(),
-    url = 'http://i.embed.ly/1/image/resize?width=' + width + '&url=http%3A%2F%2Fblog.sumitngupta.com%2Fassets%2Fcovers%2F2-bca392396952ed0909f5c37d38bfddf5.jpg&key=fb3c4ef788e74e888046dabf72245ec0/';
+    url = 'http://i.embed.ly/1/image/resize?width=' + headerWidth(width) + '&url=http%3A%2F%2Fblog.sumitngupta.com%2Fassets%2Fcovers%2F2-bca392396952ed0909f5c37d38bfddf5.jpg&key=fb3c4ef788e74e888046dabf72245ec0/';
 
   spinner = new Spinner({color: '#efefef'}).spin();
   $spinner.append(spinner.el);
 
   $.imgpreload(url, function () {
-    var imgUrl = 'url("' + this[0].src + '")';
+    var backgroundImageStyle = 'url("' + this[0].src + '")';
 
-    $header.css('background-image', imgUrl);
-    $header.css('opacity', 1);
+    $header
+      .css({
+        'background-image': backgroundImageStyle,
+        'opacity': 1
+      });
+
     $spinner.remove();
   });
 });
+
+function headerWidth(width) {
+  if (width < 400) {
+    return 400;
+  } else if (width > 400 && width < 1200) {
+    return 1200;
+  } else if (width > 1200 && width < 1600) {
+    return 1600;
+  } else if (width > 1600 && width < 2000) {
+    return 2000;
+  } else if (width > 2000) {
+    return 2880;
+  }
+}
