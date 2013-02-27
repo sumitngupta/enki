@@ -11,7 +11,7 @@
 <% else -%>
 	<% @posts.each do |post| -%>
 	<div class="post" id="<%= dom_id(post) %>">
-	  <%= render post %>
+	  <%= render :partial => 'posts/post', :locals => {:post => post, :mini => true} %>
 	</div>
 	<% end -%>
   <% if more_content? -%>

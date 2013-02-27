@@ -29,7 +29,7 @@ $(function () {
     width = $(window).width(),
     url = 'http://i.embed.ly/1/image/resize?width=' + headerWidth(width) + '&url=http%3A%2F%2Fblog.sumitngupta.com%2Fassets%2Fcovers%2F2-bca392396952ed0909f5c37d38bfddf5.jpg&key=fb3c4ef788e74e888046dabf72245ec0/';
 
-  spinner = new Spinner({color: '#efefef'}).spin();
+  spinner = new Spinner({color: '#666'}).spin();
   $spinner.append(spinner.el);
 
   $.imgpreload(url, function () {
@@ -56,5 +56,7 @@ function headerWidth(width) {
     return 2000;
   } else if (width > 2000) {
     return 2880;
+  } else {
+    return 1600;
   }
 }

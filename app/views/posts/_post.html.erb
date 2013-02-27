@@ -1,7 +1,5 @@
+<% is_mini = mini || false %>
 <h2><%= link_to(post.title, post_path(post)) %></h2>
-<div class="entry-body">
-  <%== post.body_html %>
-</div>
 <div class="meta">
   <ul>
     <li class="date">Posted on <%= format_post_date(post.published_at) %></li>
@@ -10,4 +8,7 @@
       <li class="tags">Tagged <%= linked_tag_list(post.tags) %></li>
     <% end -%>
   </ul>
+</div>
+<div class="entry-body <%= is_mini == true ? 'mini-body' : '' %>">
+  <%== post.body_html %>
 </div>
