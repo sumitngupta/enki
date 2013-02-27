@@ -1,15 +1,12 @@
 - content_for :page_title do
   = post_title @post
 
-= render @post
+= render :partial => 'posts/post', :locals => {:post => @post, :mini => false}
 
 %ol.commentlist
   - @post.approved_comments.each do |comment|
     <li#{raw cycle(' class="alt"', '')} id="comment-#{comment.id}">
     \#{render comment}
-
-.related
-  Looking for more? Head on over to the #{link_to 'archives', archives_path}.
 
 %h2 Post a comment
 - unless @comment.errors.empty?
