@@ -50,12 +50,11 @@ gem 'thin'
 # gem 'ruby-debug'
 
 # Bundle the extra gems:
-gem 'RedCloth', '~> 4.2.9', :require => 'redcloth'
+gem 'redcarpet', :require => 'redcarpet'
 gem 'ruby-openid', :require => 'openid'
 gem 'rack-openid', :require => 'rack/openid'
 gem 'aaronh-chronic', :require => 'chronic' # Fixes for 1.9.2
 gem 'coderay'
-gem 'lesstile'
 gem 'formtastic'
 gem 'formtastic-bootstrap'
 gem 'will_paginate', '~> 3.0.2'

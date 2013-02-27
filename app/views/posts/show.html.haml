@@ -1,0 +1,52 @@
+- content_for :page_title do
+  = post_title @post
+
+= render @post
+
+%ol.commentlist
+  - @post.approved_comments.each do |comment|
+    <li#{raw cycle(' class="alt"', '')} id="comment-#{comment.id}">
+    \#{render comment}
+
+.related
+  Looking for more? Head on over to the #{link_to 'archives', archives_path}.
+
+%h2 Post a comment
+- unless @comment.errors.empty?
+  .errors
+    %h3 Comment not added!
+    %ul
+      - @comment.errors.sort_by(&:first).each do |error|
+        %li= format_comment_error(error)
+
+= form_for([@post, @comment]) do |form|
+  %div
+    %p
+      = form.text_field 'author'
+      %label{:for => "comment_author"}
+        %small
+          Name or
+          %a{:href => "http://openidexplained.com/"} OpenID
+          (required)
+    %p
+      = form.text_area 'body'
+      %br/
+      %small
+        (Comments support a subset of
+        = succeed ")" do
+          %a{:href => "http://github.github.com/github-flavored-markdown/"} Markdown formatting
+    %p= submit_tag "Add Comment"
+
+%div
+  = form_for [@post, @comment] do |form|
+    %p
+      = form.text_field 'author'
+      = form.label :author
+      %small
+        Name or #{link_to 'OpenID', 'http://openidexplained.com/'} (required)
+    %p
+      = form.text_area 'body'
+      %br/
+      %small
+        (#{link_to 'lesstile enabled', 'http://lesstile.rubyforge.org'} - surround code blocks with ---)
+    %p= form.submit 'Add Comment'
