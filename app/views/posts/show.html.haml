@@ -36,17 +36,3 @@
         = succeed ")" do
           %a{:href => "http://github.github.com/github-flavored-markdown/"} Markdown formatting
     %p= submit_tag "Add Comment"
-
-%div
-  = form_for [@post, @comment] do |form|
-    %p
-      = form.text_field 'author'
-      = form.label :author
-      %small
-        Name or #{link_to 'OpenID', 'http://openidexplained.com/'} (required)
-    %p
-      = form.text_area 'body'
-      %br/
-      %small
-        (#{link_to 'lesstile enabled', 'http://lesstile.rubyforge.org'} - surround code blocks with ---)
-    %p= form.submit 'Add Comment'

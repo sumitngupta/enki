@@ -50,7 +50,7 @@ gem 'thin'
 # gem 'ruby-debug'
 
 # Bundle the extra gems:
-gem 'redcarpet', :require => 'redcarpet'
+gem 'redcarpet', '~> 1.14.2' , :require => 'redcarpet'
 gem 'ruby-openid', :require => 'openid'
 gem 'rack-openid', :require => 'rack/openid'
 gem 'aaronh-chronic', :require => 'chronic' # Fixes for 1.9.2
