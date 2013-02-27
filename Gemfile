@@ -64,7 +64,6 @@ gem 'open_id_authentication'
 gem "haml", "~> 3.1.7"
 gem "haml-rails", "~> 0.3.5"
 gem 'skeleton-rails', :git => 'git://github.com/kristianmandrup/skeleton-rails.git'
-gem 'nkss-rails', github: 'nadarei/nkss-rails'
 
 gem 'google-analytics-rails'
 
