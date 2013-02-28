@@ -3,15 +3,11 @@ class Post < ActiveRecord::Base
 
   acts_as_taggable
 
-  has_many                :comments, :dependent => :destroy
-  has_many                :approved_comments, :class_name => 'Comment'
-
   before_validation       :generate_slug
   before_validation       :set_dates
   before_save             :apply_filter
 
   validates               :title, :slug, :body, :presence => true
-
   validate                :validate_published_at_natural
 
   def validate_published_at_natural
@@ -108,10 +104,6 @@ class Post < ActiveRecord::Base
     if new_published_at = Chronic.parse(self.published_at_natural)
       self.published_at = new_published_at
     end
-  end
-
-  def denormalize_comments_count!
-    Post.update_all(["approved_comments_count = ?", self.approved_comments.count], ["id = ?", self.id])
   end
 
   def generate_slug

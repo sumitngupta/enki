@@ -6,6 +6,6 @@ Given /there is at least one post titled "([\w\s]+)"/ do |title|
   Factory(:post, :title => title)
 end
 
-Given /a post with comments exists/ do
-  Factory(:post, :comments => [Factory(:comment), Factory(:comment)])
-end
+#Given /a post with comments exists/ do
+#  Factory(:post, :comments => [Factory(:comment), Factory(:comment)])
+#end

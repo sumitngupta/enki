@@ -15,7 +15,6 @@
 //= require spin
 //= require jquery.imgpreload
 //= require common
-//= require live-comment-preview
 //= require_self
 
 

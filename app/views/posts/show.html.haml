@@ -5,6 +5,7 @@
 
 %hr
 %h2 Comments
+
 #disqus_thread
 :javascript
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -20,34 +21,3 @@
 %noscript
   Please enable JavaScript to view the
   %a{:href => "http://disqus.com/?ref_noscript"} comments powered by Disqus.
-
--#%ol.commentlist
--#  - @post.approved_comments.each do |comment|
--#    <li#{raw cycle(' class="alt"', '')} id="comment-#{comment.id}">
--#    \#{render comment}
-
--#%h2 Post a comment
--#- unless @comment.errors.empty?
--#  .errors
--#    %h3 Comment not added!
--#    %ul
--#      - @comment.errors.sort_by(&:first).each do |error|
--#        %li= format_comment_error(error)
--#
--#= form_for([@post, @comment]) do |form|
--#  %div
--#    %p
--#      = form.text_field 'author'
--#      %label{:for => "comment_author"}
--#        %small
--#          Name or
--#          %a{:href => "http://openidexplained.com/"} OpenID
--#          (required)
--#    %p
--#      = form.text_area 'body'
--#      %br/
--#      %small
--#        (Comments support a subset of
--#        = succeed ")" do
--#          %a{:href => "http://github.github.com/github-flavored-markdown/"} Markdown formatting
--#    %p= submit_tag "Add Comment"
