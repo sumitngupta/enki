@@ -21,6 +21,14 @@ $header_font: 'Libre Baskerville', serif
 
 a
   text-decoration: none
+  color: #333
+
+  &:visited
+    color: #333
+
+  &:hover
+    text-decoration: none
+    color: #666
 
 body
   background-color: #e3e3e1
@@ -85,3 +93,24 @@ body
 .mini-body
   p:first-of-type
     display: block !important
+
+.meta
+  ul
+    list-style: none
+    padding-left: 0
+    font-size: 14px
+
+  li
+    @include inline-block
+    margin-bottom: 0
+
+  .date
+    padding-right: 10px
+    border-right: 1px dotted #666
+
+  .comments
+    padding: 0 10px
+    border-right: 1px dotted #666
+
+  .tags
+    padding-left: 10px
