@@ -1,0 +1,41 @@
+@import "compass/css3/font-face"
+
+//@font-face
+//  font-family: 'libre_baskervillebold'
+//  src: url(font-path('librebaskerville-bold-webfont.eot'))
+//  src: url(font-path('librebaskerville-bold-webfont.eot?#iefix')) format('embedded-opentype'),
+//    url(font-path('librebaskerville-bold-webfont.woff')) format('woff'),
+//    url(font-path('librebaskerville-bold-webfont.ttf')) format('truetype'),
+//    url(font-path('librebaskerville-bold-webfont.svg#libre_baskervillebold')) format('svg')
+//  font-weight: normal
+//  font-style: normal
+//
+
+@mixin fontface($name, $font_filename)
+  @include font-face($name, font-files(font-path("#{$font_filename}.woff"), font-path("#{$font_filename}.ttf"), font-path("#{$font_filename}.svg"), font-path("#{$font_filename}.eot")))
+
+@include fontface('Libre Baskerville Bold', 'librebaskerville-bold-webfont')
+@include fontface('Libre Baskerville Italic', 'librebaskerville-italic-webfont')
+@include fontface('Libre Baskerville', 'librebaskerville-regular-webfont')
+
+//@font-face
+//  font-family: 'libre_baskervilleitalic'
+//  src: url('librebaskerville-italic-webfont.eot')
+//  src: url('librebaskerville-italic-webfont.eot?#iefix') format('embedded-opentype'),
+//    url('librebaskerville-italic-webfont.woff') format('woff'),
+//    url('librebaskerville-italic-webfont.ttf') format('truetype'),
+//    url('librebaskerville-italic-webfont.svg#libre_baskervilleitalic') format('svg')
+//  font-weight: normal
+//  font-style: normal
+//
+//@font-face
+//  font-family: 'libre_baskervilleregular'
+//  src: url('librebaskerville-regular-webfont.eot')
+//  src: url('librebaskerville-regular-webfont.eot?#iefix') format('embedded-opentype'),
+//    url('librebaskerville-regular-webfont.woff') format('woff'),
+//    url('librebaskerville-regular-webfont.ttf') format('truetype'),
+//    url('librebaskerville-regular-webfont.svg#libre_baskervilleregular') format('svg')
+//  font-weight: normal
+//  font-style: normal
+//
+//
