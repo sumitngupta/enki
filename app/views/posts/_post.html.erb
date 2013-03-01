@@ -8,6 +8,9 @@
     <% end -%>
   </ul>
 </div>
-<div class="entry-body <%= is_mini == true ? 'mini-body' : '' %>">
+<div class="entry-body <%= is_mini ? 'mini-body' : '' %>">
   <%== post.body_html %>
 </div>
+<% if is_mini %>
+  <div class="read-more"><%= link_to "read more", post_path(post) %></div>
+<% end %>
