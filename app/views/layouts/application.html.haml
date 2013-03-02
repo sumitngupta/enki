@@ -27,36 +27,11 @@
         .container
           .sixteen.columns
 
+    - flash.each do |key, msg|
+      .container{:class => key}
+        .sixteen.columns
+          %p= msg
+
     .container
       .sixteen.columns
         = yield
-
-
--##page_container
--#  #content
--#
--#    #main
--##navigation
--#  %h2 Pages
--#  %ul
--#    - page_links_for_navigation.each do |link|
--#      %li= link_to(link.name, link.url)
--#  - unless category_links_for_navigation.empty?
--#    %h2 Categories
--#    %ul
--#      - category_links_for_navigation.each do |link|
--#        %li= link_to(link.name, link.url)
--#  %form#sform{:action => "http://www.google.com/search", :method => "get"}
--#    %div
--#      %h2
--#        %label{:for => "q"} Search
--#      %input#q{:name => "q", :type => "text", :value => ""}
--#        %input{:name => "sitesearch", :type => "hidden", :value => enki_config[:url]}
-
--##footer
--#  = enki_config[:title]
--#  © #{enki_config[:author, :name]}. Valid
--#  %a{:href => "http://validator.w3.org/check?uri=referer"} HTML5
--#  and #{link_to "ATOM", "http://feedvalidator.org/check.cgi?url=#{enki_config[:url]}/posts.atom"}. Powered by
--#  = succeed "." do
--#    %a{:href => "http://www.enkiblog.com", :title => "A Ruby on Rails blogging app for the fashionable developer"} Enki
