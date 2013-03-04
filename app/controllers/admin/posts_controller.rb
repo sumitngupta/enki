@@ -15,6 +15,11 @@ class Admin::PostsController < Admin::BaseController
 
   def create
     @post = Post.new(params[:post])
+
+    if params[:button] == 'draft'
+      @post.published_at = 10.years.from_now
+    end
+
     if @post.save
       respond_to do |format|
         format.html {

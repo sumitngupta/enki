@@ -3,5 +3,6 @@
   <%= render :partial => 'form', :locals => {:form => form} -%>
   <%= form.actions do -%>
     <%= form.action :submit, :as => :button -%>
+    <%= form.action :submit, :as => :button, :label => 'Draft', :button_html => {:value => 'draft'} -%>
   <% end -%>
 <% end -%>

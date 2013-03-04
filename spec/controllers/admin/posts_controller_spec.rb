@@ -106,9 +106,22 @@ describe Admin::PostsController do
   end
 
   describe 'handling POST to create with valid attributes' do
-    it 'creates a post' do
+    before :each do
       session[:logged_in] = true
+    end
+
+    it 'creates a post' do
       lambda { post :create, :post => valid_post_attributes }.should change(Post, :count).by(1)
+    end
+
+    context 'drafting a post' do
+      it 'creates the post to be published 10 years from now' do
+        post :create, :post => valid_post_attributes, :button => 'draft'
+
+        p = Post.last
+
+        p.published_at.should > (10.years.from_now - 1.day)
+      end
     end
   end
 
