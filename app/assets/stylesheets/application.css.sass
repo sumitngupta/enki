@@ -117,14 +117,17 @@ body
   display: none
 
 .mini-body
-  p:first-of-type, nth-of-type(2)
+  p:first-of-type, p:nth-of-type(2)
     display: block !important
 
   img:first-of-type
     display: block !important
 
 .read-more
-  font-size: 80%
+  a
+    font-size: 70%
+    font-family: $header_italic_font
+    color:  #999
 
 .meta
   font-family: $header_italic_font
