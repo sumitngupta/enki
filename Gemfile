@@ -67,6 +67,9 @@ gem 'skeleton-rails', :git => 'git://github.com/kristianmandrup/skeleton-rails.g
 
 gem 'google-analytics-rails'
 
+gem 'hpricot'
+gem 'ruby_parser'
+
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
