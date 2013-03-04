@@ -44,6 +44,8 @@ $(function () {
   });
 });
 
+// This disgusts me.. I'll worry about it to be more intelligent when
+// I care more.
 function headerWidth(width) {
   if (width < 400) {
     return 400;
