@@ -1,0 +1,11 @@
+%tr{:class => cycle('', 'alt')}
+  %td= post.published_at.strftime('%d %b, %Y')
+  %td= link_to (post.title == '' ? '[Untitled]' : truncate(post.title, :length => 30)), admin_post_path(post)
+  %td
+    - tmpc = truncate(post.body, :length => 55)
+    = (tmpc != '' ? tmpc : '&nbsp;')
+  %td
+    = link_to admin_post_path(post) do
+      %i.icon-pencil
+    = form_for(post, :as => :post, :url => admin_post_path(post), :html => {:class => 'delete-item', :method => :delete}) do |form|
+      %i.icon-trash

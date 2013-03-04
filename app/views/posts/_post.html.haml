@@ -1,0 +1,12 @@
+- is_mini = mini || false
+%h2= link_to(post.title, post_path(post))
+.meta
+  %ul
+    %li.date= format_post_date(post.published_at)
+    - unless post.tags.empty?
+      %li.tags
+        Tags: #{linked_tag_list(post.tags)}
+%div{:class => "entry-body #{is_mini ? 'mini-body' : ''}"}
+  != post.body_html
+- if is_mini
+  .read-more= link_to "read more", post_path(post)
