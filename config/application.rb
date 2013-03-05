@@ -69,5 +69,7 @@ module Enki
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     config.assets.initialize_on_precompile = false
+
+    config.cache_store = :dalli_store
   end
 end

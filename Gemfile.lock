@@ -69,6 +69,7 @@ GEM
       cucumber (>= 1.1.1)
       launchy
     daemons (1.1.9)
+    dalli (2.6.2)
     database_cleaner (0.9.1)
     diff-lcs (1.2.1)
     erubis (2.7.0)
@@ -211,6 +212,7 @@ DEPENDENCIES
   compass-rails
   cucumber-rails
   cucumber-websteps
+  dalli
   database_cleaner
   exception_notification (~> 2.5.2)
   factory_girl
